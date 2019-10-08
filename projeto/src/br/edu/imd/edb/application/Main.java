@@ -24,18 +24,8 @@ public class Main {
         tree.insert(35);
         tree.insert(32);
         tree.insert(38);
-        Heap heap = new Heap();
-        heap.insert(tree);
-        tree.printTree();
 
-        Tree p ;
-
-
-        while (heap.getSize() > 0) {
-            p = heap.peek();
-            System.out.println("Valor " + p.getRoot().getValue().getValue());
-            heap.remove();
-        }
+        System.out.println(tree.getList());
 
     }
 }

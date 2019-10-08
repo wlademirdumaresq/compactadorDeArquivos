@@ -3,24 +3,8 @@ package br.edu.imd.edb.tree;
 
 import br.edu.imd.edb.entities.Char;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Tree {
+public class TreeBrinari {
     private Node raiz = null;
-    private List<Node> list = new ArrayList<>();
-
-    public List<Node> getList() {
-        return list;
-    }
-
-    public void Add(Node n){
-        list.add(n);
-    }
-
-    public void Remove(Node n){
-        list.remove(n);
-    }
 
     public boolean isEmpty() {
         return raiz == null;
@@ -31,8 +15,12 @@ public class Tree {
     }
 
     public void insert(Node node) {
-
-        Add(node);
+        if (isEmpty()) {
+            raiz = node;
+            return;
+        }
+        raiz.insert(node);
+       // calcularBalanceamento();
     }
 
     public void insert(Char c) {
@@ -45,7 +33,6 @@ public class Tree {
         Node n = new Node(c);
         insert(n);
     }
-
 
     public Node search(int key) {
         if (isEmpty()) {
