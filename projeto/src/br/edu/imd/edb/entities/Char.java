@@ -1,18 +1,9 @@
 package br.edu.imd.edb.entities;
 
 public class Char {
-    private int value;
+    private Character character;
+    private Integer quantitie;
 
 
-    public Char(int value) {
-        this.value = value;
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    public void setValue(int value) {
-        this.value = value;
-    }
+}
 }

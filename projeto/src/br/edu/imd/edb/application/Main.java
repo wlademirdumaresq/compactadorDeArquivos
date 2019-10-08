@@ -2,6 +2,7 @@ package br.edu.imd.edb.application;
 
 import br.edu.imd.edb.entities.Char;
 import br.edu.imd.edb.heap.Heap;
+import br.edu.imd.edb.tree.Node;
 import br.edu.imd.edb.tree.Tree;
 
 public class Main {
@@ -26,6 +27,8 @@ public class Main {
         tree.insert(38);
 
         System.out.println(tree.getList());
+        Heap h = new Heap();
+
 
     }
 }
