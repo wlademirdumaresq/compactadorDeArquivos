@@ -1,1 +1,2 @@
 # compactadorDeArquivos
+teste
