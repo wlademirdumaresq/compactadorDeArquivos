@@ -1,33 +1,45 @@
 package br.edu.imd.edb.application;
 
-import br.edu.imd.edb.entities.Char;
 import br.edu.imd.edb.heap.Heap;
 import br.edu.imd.edb.tree.Node;
-import br.edu.imd.edb.tree.Tree;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Tree tree = new Tree();
-        tree.insert(20);
-        tree.insert(10);
-        tree.insert(5);
-        tree.insert(2);
-        tree.insert(8);
-        tree.insert(15);
-        tree.insert(12);
-        tree.insert(18);
-        tree.insert(30);
-        tree.insert(25);
-        tree.insert(22);
-        tree.insert(28);
-        tree.insert(35);
-        tree.insert(32);
-        tree.insert(38);
+        Node node1 = new Node('l', 4);
+        Node node2 = new Node('o', 3);
+        Node node3 = new Node('a', 3);
+        Node node4 = new Node('p', 1);
+        Node node5 = new Node('z', 1);
 
-        System.out.println(tree.getList());
-        Heap h = new Heap();
+        Heap heap = new Heap();
+        heap.insert(node1);
+        heap.insert(node2);
+        heap.insert(node3);
+        heap.insert(node4);
+        heap.insert(node5);
+
+        Node tree = new Node();
+
+         do{
+            if(heap.getSize() == 0){
+                break;
+            }
+            Node left = heap.peek();
+            heap.remove();
+            Node right = heap.peek();
+            heap.remove();
+            tree = new Node(left.getValue().getQuantitie()+right.getValue().getQuantitie(),left,right);
+            heap.insert(tree);
+        }while (heap.getSize() > 1);
+
+        System.out.println(tree.printTree(0));
+
+
+
+
+
 
 
     }
