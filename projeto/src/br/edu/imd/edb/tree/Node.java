@@ -1,16 +1,25 @@
 package br.edu.imd.edb.tree;
 
 import br.edu.imd.edb.entities.Char;
+
 public class Node {
 
 
     private Char value;
     private Node left;
     private Node right;
+    private Integer bit;
+    private String pathBit;
 
+    public Integer getBit() {
+        return bit;
+    }
 
+    public void setBit(Integer bit) {
+        this.bit = bit;
+    }
 
-    //construtores
+//construtores
 
     public Node() {
 
@@ -25,8 +34,8 @@ public class Node {
         this.right = null;
     }
 
-    public Node(Character c , Integer x) {
-        this.value = new Char(c,x);
+    public Node(Integer c, Integer x) {
+        this.value = new Char(c, x);
         this.left = null;
         this.right = null;
     }
@@ -42,6 +51,9 @@ public class Node {
         this.value = new Char(x);
         this.left = left;
         this.right = right;
+        this.bit = null;
+        this.left.setBit(0);
+        this.right.setBit(1);
     }
 
     //Get && Set
@@ -71,17 +83,30 @@ public class Node {
         this.right = right;
     }
 
-    public String toString() {
+    public String getPathBit() {
+        return pathBit;
+    }
 
-            return "[" + this.getValue().getQuantitie() + " " + this.getValue().getCharacter()+"]";
+    public void setPathBit(String pathBit) {
+        this.pathBit = pathBit;
+    }
+
+
+    @Override
+    public String toString() {
+        return "[" + this.getValue().getQuantitie() + " " + this.getBit() + "]";
 
     }
 
 
     public String printTree(int level) {
-
-        String str = toString() + "\n";
-        for (int i = 0; i <= level; i++) {
+        String str = "";
+        if(value.getCharacter()!= null){
+            str =(char) Integer.parseInt(Integer.toString(this.getValue().getCharacter()))+ toString() + "\n";
+        }else {
+             str = toString() + "\n";
+        }
+        for (int i = 0; i <= level * 3; i++) {
             str += "\t";
         }
         if (this.getLeft() != null) {
@@ -92,7 +117,7 @@ public class Node {
             str += "o-ESQ: NULL";
         }
         str += "\n";
-        for (int i = 0; i <= level; i++) {
+        for (int i = 0; i <= level * 3; i++) {
             str += "\t";
         }
         if (this.getRight() != null) {
@@ -107,5 +132,6 @@ public class Node {
         return str;
 
     }
+
 
 }

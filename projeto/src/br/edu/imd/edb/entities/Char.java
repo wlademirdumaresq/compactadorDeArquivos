@@ -1,10 +1,10 @@
 package br.edu.imd.edb.entities;
 
 public class Char {
-    private Character character;
+    private Integer character;
     private Integer quantitie;
 
-    public Char(Character character, Integer quantitie) {
+    public Char(Integer character, Integer quantitie) {
         this.character = character;
         this.quantitie = quantitie;
     }
@@ -13,11 +13,13 @@ public class Char {
         this.quantitie = quantitie;
     }
 
-    public Character getCharacter() {
+    public Integer getCharacter() {
+
+
         return character;
     }
 
-    public void setCharacter(Character character) {
+    public void setCharacter(Integer character) {
         this.character = character;
     }
 
@@ -28,5 +30,6 @@ public class Char {
     public void setQuantitie(Integer quantitie) {
         this.quantitie = quantitie;
     }
-}
 
+
+}

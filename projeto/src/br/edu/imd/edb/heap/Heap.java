@@ -47,7 +47,7 @@ public class Heap {
 
     public int getParentIndex(int index) {
 
-    	return (int) Math.floor((index - 1) / 2);
+        return (int) Math.floor((index - 1) / 2);
     }
 
     private void ensureCapacity() {
@@ -59,7 +59,7 @@ public class Heap {
 
     public int getSize() {
 
-    	return size;
+        return size;
     }
 
     public Node peek() {
@@ -105,5 +105,3 @@ public class Heap {
 
 
 }
-
-
