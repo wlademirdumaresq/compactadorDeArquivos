@@ -6,9 +6,15 @@ public class TBinary {
 
     private static String tableCode = "";
 
-    public static String[] LBinary(Node no) {
+    public static String[] LBinary(Node no, boolean chave) {
+        if( chave == true){
         tableCode = LBinary(no, "");
         return tableCode.split("=");
+        }else{
+            tableCode += "258"+"=0";
+            return tableCode.split("=");
+        }
+
     }
 
     private static String LBinary(Node no, String codigo) {

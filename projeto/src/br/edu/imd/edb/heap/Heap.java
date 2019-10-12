@@ -11,15 +11,10 @@ public class Heap {
     private int capacity;//quantos elementos cabem
 
     public Heap() {
-        this(10);
-    }
-
-    public Heap(int capacity) {
-        node = new Node[capacity];
+        this.capacity = 10;
         this.size = 0;
-        this.capacity = capacity;
+        node = new Node[capacity];
     }
-
 
     public void insert(Node no) {
         ensureCapacity();

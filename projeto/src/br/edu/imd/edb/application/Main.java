@@ -61,9 +61,10 @@ public class Main {
 
 
         Node tree = new Node();
-
+        boolean chave = true;
         do {
-            if (heap.getSize() == 0) {
+            if (heap.getSize() == 1) {
+                chave = false;
                 break;
             }
             Node left = heap.peek();
@@ -72,9 +73,11 @@ public class Main {
             heap.remove();
             tree = new Node(left.getValue().getQuantitie() + right.getValue().getQuantitie(), left, right);
             heap.insert(tree);
+
         } while (heap.getSize() > 1);
 
-        String bit[] = LBinary(tree);
+       // System.out.println(tree.printTree(0));
+        String bit[] = LBinary(tree, chave);
 
         //System.out.println( tree.printTree(0));
         Map<Character, String> binari = new HashMap<>();
@@ -112,9 +115,9 @@ public class Main {
                     }
                 }
             }
-            if(leitor.hasNextLine()){
-                for (int j = 0; j < binari.get((char)300).length(); j++) {
-                    if (binari.get((char)300).charAt(j) == '1') {
+            if (leitor.hasNextLine()) {
+                for (int j = 0; j < binari.get((char) 300).length(); j++) {
+                    if (binari.get((char) 300).charAt(j) == '1') {
                         bits += "1";
                         bitSet.set(contador);
                     } else {
@@ -137,14 +140,14 @@ public class Main {
             }
             contador += 1;
         }
-        int multiplicacao=0;
+        int multiplicacao = 0;
         if (contador % 8 == 0) {
 
             b.write(bitSet.toByteArray());
             b.close();
             arq.close();
         } else {
-             multiplicacao = (int) ((1 - (((float) contador / 8) - (contador / 8))) * 8);
+            multiplicacao = (int) ((1 - (((float) contador / 8) - (contador / 8))) * 8);
             for (int i = 0; i < multiplicacao; i++) {
                 bitSet.set(contador);
                 contador += 1;
@@ -166,7 +169,7 @@ public class Main {
             l = ler.nextLine().split("=");
             for (int i = 0; i < l.length; ) {
                 letra.put(l[i + 1], l[i].charAt(0));
-                codigo.put(l[i].charAt(0),l[i + 1]);
+                codigo.put(l[i].charAt(0), l[i + 1]);
                 i += 2;
             }
 
@@ -174,11 +177,11 @@ public class Main {
         dicionario.close();
 
 
-        FileWriter escreve = new FileWriter("Teste2.txt");
+        //FileWriter escreve = new FileWriter("Teste2.txt");
         FileInputStream fs = new FileInputStream("filename.edz");
 
-        ler = new Scanner(mensagem);
-        String l1;
+        //  ler = new Scanner(mensagem);
+//        String l1;
         byte[] bytes = fs.readAllBytes();
         StringBuilder str = new StringBuilder();
 
@@ -188,27 +191,27 @@ public class Main {
         String comparador = "";
         FileWriter novo = new FileWriter("novo.txt");
 
-        int cont =0;
+        int cont = 0;
         for (int j = 0; j < str.length(); j++) {
-            comparador+=str.charAt(j);
+            comparador += str.charAt(j);
             if (comparador.equals(codigo.get((char) 258))) {
                 novo.close();
 
             } else if (codigo.containsValue(comparador)) {
-                cont+= comparador.length();
-                if(comparador.equals(codigo.get((char) 300))){
+                cont += comparador.length();
+                if (comparador.equals(codigo.get((char) 300))) {
                     novo.write("\n");
-                    comparador="";
+                    comparador = "";
 
-                }else{
+                } else {
                     novo.write(letra.get(comparador));
-                    comparador="";
+                    comparador = "";
                 }
 
 
             }
         }
-        str.trimToSize();
+        //str.trimToSize();
 
         // } else if (args[0].equals("Extract")) {
 //            try{
