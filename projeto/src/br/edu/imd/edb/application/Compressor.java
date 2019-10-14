@@ -142,19 +142,7 @@ public class Compressor {
                 }
             }
 
-            if(linha.length()==0){
 
-                for (int j = 0; j < binari.get((char) 300).length(); j++) {
-                    if (binari.get((char) 300).charAt(j) == '1') {
-                        bits += "1";
-                        bitSet.set(contador);
-                    } else {
-                        bits += "0";
-                        bitSet.set(contador, false);
-                    }
-                    contador += 1;
-                }
-            }else{
 
                 if (leitor.hasNextLine()) {
 
@@ -169,7 +157,6 @@ public class Compressor {
                         contador += 1;
                     }
                 }
-            }
         }
 
 
