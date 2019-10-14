@@ -20,19 +20,22 @@ public class Compressor {
     private Map<Character, String> binari = new HashMap<>();
     private String texto, mensagem, dicionario;
 
-    public Compressor(String texto, String mensagem, String dicionario){
+    public Compressor(String texto, String mensagem, String dicionario) {
         this.texto = texto;
         this.mensagem = mensagem;
         this.dicionario = dicionario;
     }
 
-    public void criarDicionario() throws FileNotFoundException {
-        File arq = new File(texto);
-        Scanner leitor = new Scanner(arq);
-        String linha;
-        if (arq.exists()) {
-            while (leitor.hasNextLine()) {
-                linha = leitor.nextLine();
+    public void criarDicionario() {
+
+        try {
+            FileReader arq = new FileReader(texto);
+            BufferedReader leitor = new BufferedReader(arq);
+            String linha;
+            linha = leitor.readLine();
+
+            while (linha != null) {
+
 
                 for (int i = 0; i < linha.length(); i++) {
                     if (map.containsKey((int) linha.charAt(i))) {
@@ -43,23 +46,40 @@ public class Compressor {
                     }
                 }
 
-                if (map.containsKey(300) && leitor.hasNextLine()) {
+                linha = leitor.readLine();
+
+                if (map.containsKey(300) && linha != null) {
                     int value = (map.get(300)) + 1;
-                    map.remove(300);
                     map.put(300, value);
-                } else if (!(map.containsKey(300)) && leitor.hasNextLine()) {
+                }
+                if (!(map.containsKey(300)) && linha != null) {
                     map.put(300, 1);
                 }
+
+
             }
-        } else {
-            System.out.println("parametro invalido");
+
+            try {
+                if (leitor != null) {
+                    leitor.close();
+                }
+                if (arq != null) {
+                    arq.close();
+                }
+
+            } catch (IOException j) {
+
+                j.printStackTrace();
+            }
+
+        } catch (IOException e) {
+            System.out.println("parametro invalido" + e.getMessage());
         }
 
         map.put(258, 1);
-        leitor.close();
     }
 
-    public void criandoArvore(){
+    public void criandoArvore() {
         for (Integer i : map.keySet()) {
             Node no = new Node(i, map.get(i));
             heap.insert(no);
@@ -87,7 +107,7 @@ public class Compressor {
         FileWriter tabelaCod = new FileWriter(dicionario);
 
         for (int i = 0; i < bit.length; ) {
-            tabelaCod.write((char) Integer.parseInt(bit[i]) + String.valueOf((char)305) + bit[i + 1] + "\n");
+            tabelaCod.write((char) Integer.parseInt(bit[i]) + bit[i + 1] + "\n");
             binari.put((char) Integer.parseInt(bit[i]), bit[i + 1]);
             i += 2;
         }
@@ -103,6 +123,7 @@ public class Compressor {
         int contador = 0;
         BitSet bitSet = new BitSet();
         String bits = "";
+        int cont = 1;
         while (leitor.hasNextLine()) {
             String linha = leitor.nextLine();
 
@@ -120,7 +141,9 @@ public class Compressor {
                     }
                 }
             }
-            if (leitor.hasNextLine()) {
+
+            if(linha.length()==0){
+
                 for (int j = 0; j < binari.get((char) 300).length(); j++) {
                     if (binari.get((char) 300).charAt(j) == '1') {
                         bits += "1";
@@ -130,6 +153,21 @@ public class Compressor {
                         bitSet.set(contador, false);
                     }
                     contador += 1;
+                }
+            }else{
+
+                if (leitor.hasNextLine()) {
+
+                    for (int j = 0; j < binari.get((char) 300).length(); j++) {
+                        if (binari.get((char) 300).charAt(j) == '1') {
+                            bits += "1";
+                            bitSet.set(contador);
+                        } else {
+                            bits += "0";
+                            bitSet.set(contador, false);
+                        }
+                        contador += 1;
+                    }
                 }
             }
         }

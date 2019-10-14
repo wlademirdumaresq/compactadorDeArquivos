@@ -20,17 +20,19 @@ public class Extractor {
         FileReader dicionario = new FileReader(mapa);
 
         Scanner ler = new Scanner(dicionario);
-        String[] l;
-        int i;
-        while (ler.hasNextLine()) {
-            l = ler.nextLine().split(String.valueOf((char)305));
-            i = 0;
 
-            while(i < l.length) {
-                letra.put(l[i + 1], l[i].charAt(0));
-                codigo.put(l[i].charAt(0), l[i + 1]);
-                i += 2;
+        String cod = "";
+        while (ler.hasNextLine()) {
+            String x = ler.nextLine();
+            char c = x.charAt(0);
+            for (int i = 1; i < x.length(); i++) {
+                cod += x.charAt(i);
             }
+
+            letra.put(cod, c);
+            codigo.put(c, cod);
+            cod = "";
+
         }
         dicionario.close();
     }
@@ -51,15 +53,26 @@ public class Extractor {
         //int cont = 0;
         for (int j = 0; j < str.length(); j++) {
             comparador += str.charAt(j);
-            if (comparador.equals(codigo.get((char) 258))) {
-                novo.close();
-
-            } else if (codigo.containsValue(comparador)) {
+            if (codigo.containsValue(comparador)) {
                 //cont += comparador.length();
                 if (comparador.equals(codigo.get((char) 300))) {
                     novo.write("\n");
                     comparador = "";
 
+                } else if (comparador.equals(codigo.get((char) 258))) {
+
+                    if (!codigo.containsKey((char) 300) && codigo.size() > 1) {
+                        novo.write("\n");
+                        novo.close();
+                    } else if (codigo.containsKey((char) 300) && codigo.size() > 2) {
+                        novo.write("\n");
+
+                        novo.close();
+                    } else {
+
+                        novo.close();
+
+                    }
                 } else {
                     novo.write(letra.get(comparador));
                     comparador = "";
