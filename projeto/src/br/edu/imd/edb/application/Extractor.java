@@ -48,14 +48,14 @@ public class Extractor {
         String comparador = "";
         FileWriter novo = new FileWriter(traducao);
 
-        int cont = 0;
+        //int cont = 0;
         for (int j = 0; j < str.length(); j++) {
             comparador += str.charAt(j);
             if (comparador.equals(codigo.get((char) 258))) {
                 novo.close();
 
             } else if (codigo.containsValue(comparador)) {
-                cont += comparador.length();
+                //cont += comparador.length();
                 if (comparador.equals(codigo.get((char) 300))) {
                     novo.write("\n");
                     comparador = "";

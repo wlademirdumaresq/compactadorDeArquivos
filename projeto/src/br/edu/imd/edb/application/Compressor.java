@@ -30,11 +30,10 @@ public class Compressor {
         File arq = new File(texto);
         Scanner leitor = new Scanner(arq);
         String linha;
-        int z=1;
         if (arq.exists()) {
             while (leitor.hasNextLine()) {
                 linha = leitor.nextLine();
-                System.out.println(z + "=" +linha);
+
                 for (int i = 0; i < linha.length(); i++) {
                     if (map.containsKey((int) linha.charAt(i))) {
                         int value = (map.get((int) linha.charAt(i))) + 1;
@@ -51,7 +50,6 @@ public class Compressor {
                 } else if (!(map.containsKey(300)) && leitor.hasNextLine()) {
                     map.put(300, 1);
                 }
-                z++;
             }
         } else {
             System.out.println("parametro invalido");
