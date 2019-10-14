@@ -62,14 +62,15 @@ public class Extractor {
                 } else if (comparador.equals(codigo.get((char) 258))) {
 
                     if (!codigo.containsKey((char) 300) && codigo.size() > 1) {
+                        System.out.println("entrou1");
                         novo.write("\n");
                         novo.close();
                     } else if (codigo.containsKey((char) 300) && codigo.size() > 2) {
                         novo.write("\n");
-
+                        System.out.println("entrou2");
                         novo.close();
                     } else {
-
+                        System.out.println("entrou3");
                         novo.close();
 
                     }
