@@ -7,8 +7,8 @@ import java.util.Arrays;
 
 public class Heap {
     private Node[] node;
-    private int size;//quantos elementos tem
-    private int capacity;//quantos elementos cabem
+    private int size;
+    private int capacity;
 
     public Heap() {
         this.capacity = 10;

@@ -4,15 +4,15 @@ import br.edu.imd.edb.heap.Heap;
 import br.edu.imd.edb.tree.Node;
 
 import java.io.*;
-import java.util.BitSet;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 import static br.edu.imd.edb.util.TBinary.LBinary;
 
 public class Compressor {
 
+    private int tamanhoAntigo;
+    private int tamanhoTabela;
+    private int tamanhoCodificado;
     private Heap heap = new Heap();
     private Map<Integer, Integer> map = new HashMap<>();
     private boolean chave = true;
@@ -20,56 +20,36 @@ public class Compressor {
     private Map<Character, String> binari = new HashMap<>();
     private String texto, mensagem, dicionario;
 
-    public Compressor(String texto, String mensagem, String dicionario) {
+    public Compressor(String texto, String mensagem, String dicionario) throws IOException {
         this.texto = texto;
         this.mensagem = mensagem;
         this.dicionario = dicionario;
+        criarDicionario();
+        criandoArvore();
+        criandoTabela();
+        codificandoTexto();
     }
+
+
 
     public void criarDicionario() {
 
         try {
-            FileReader arq = new FileReader(texto);
-            BufferedReader leitor = new BufferedReader(arq);
-            String linha;
-            linha = leitor.readLine();
+            FileInputStream arq = new FileInputStream(texto);
 
-            while (linha != null) {
+            BufferedInputStream leitor = new BufferedInputStream(arq);
 
+            byte linha[] = leitor.readAllBytes();
+            tamanhoAntigo = linha.length;
+            String arquivo = new String(linha, "UTF8");
 
-                for (int i = 0; i < linha.length(); i++) {
-                    if (map.containsKey((int) linha.charAt(i))) {
-                        int value = (map.get((int) linha.charAt(i))) + 1;
-                        map.put((int) linha.charAt(i), value);
-                    } else {
-                        map.put((int) linha.charAt(i), 1);
-                    }
+            for (int i = 0; i < arquivo.length(); i++) {
+                if (map.containsKey((int) arquivo.charAt(i))) {
+                    int value = (map.get((int) arquivo.charAt(i))) + 1;
+                    map.put((int) arquivo.charAt(i), value);
+                } else {
+                    map.put((int) arquivo.charAt(i), 1);
                 }
-
-                linha = leitor.readLine();
-
-                if (map.containsKey(300) && linha != null) {
-                    int value = (map.get(300)) + 1;
-                    map.put(300, value);
-                }
-                if (!(map.containsKey(300)) && linha != null) {
-                    map.put(300, 1);
-                }
-
-
-            }
-
-            try {
-                if (leitor != null) {
-                    leitor.close();
-                }
-                if (arq != null) {
-                    arq.close();
-                }
-
-            } catch (IOException j) {
-
-                j.printStackTrace();
             }
 
         } catch (IOException e) {
@@ -101,71 +81,60 @@ public class Compressor {
 
     }
 
-    public Map criandoTabela() throws IOException {
+    public void criandoTabela() throws IOException {
         String bit[] = LBinary(tree, chave);
 
         FileWriter tabelaCod = new FileWriter(dicionario);
-
+        tamanhoTabela = 0;
         for (int i = 0; i < bit.length; ) {
-            tabelaCod.write((char) Integer.parseInt(bit[i]) + bit[i + 1] + "\n");
+            tabelaCod.write((char) Integer.parseInt(bit[i]) + String.valueOf((char) -1) + bit[i + 1] + String.valueOf((char) -1));
             binari.put((char) Integer.parseInt(bit[i]), bit[i + 1]);
             i += 2;
         }
         tabelaCod.close();
+        FileInputStream tabela = new FileInputStream(dicionario);
+        tamanhoTabela = tabela.readAllBytes().length;
+        tabela.close();
 
-        return binari;
     }
 
     public void codificandoTexto() throws IOException {
         FileOutputStream b = new FileOutputStream(mensagem);
-        FileReader arq = new FileReader(texto);
-        Scanner leitor = new Scanner(arq);
+        FileInputStream arq = new FileInputStream(texto);
+        BufferedInputStream leitor = new BufferedInputStream(arq);
+
         int contador = 0;
+
         BitSet bitSet = new BitSet();
         String bits = "";
-        int cont = 1;
-        while (leitor.hasNextLine()) {
-            String linha = leitor.nextLine();
 
-            for (int i = 0; i < linha.length(); i++) {
-                if (binari.containsKey(linha.charAt(i))) {
-                    for (int j = 0; j < binari.get(linha.charAt(i)).length(); j++) {
-                        if (binari.get(linha.charAt(i)).charAt(j) == '1') {
-                            bits += "1";
-                            bitSet.set(contador);
-                        } else {
-                            bits += "0";
-                            bitSet.set(contador, false);
-                        }
-                        contador += 1;
+
+        byte texto[] = leitor.readAllBytes();
+        String arquivo = new String(texto, "UTF8");
+
+        for (int i = 0; i < arquivo.length(); i++) {
+
+            if (binari.containsKey(arquivo.charAt(i))) {
+                for (int j = 0; j < binari.get(arquivo.charAt(i)).length(); j++) {
+                    if (binari.get(arquivo.charAt(i)).charAt(j) == '1') {
+                        bits += "1";
+                        bitSet.set(contador);
+                    } else {
+                        bits += "0";
+                        bitSet.set(contador, false);
                     }
+                    contador += 1;
                 }
             }
 
-
-
-                if (leitor.hasNextLine()) {
-
-                    for (int j = 0; j < binari.get((char) 300).length(); j++) {
-                        if (binari.get((char) 300).charAt(j) == '1') {
-                            bits += "1";
-                            bitSet.set(contador);
-                        } else {
-                            bits += "0";
-                            bitSet.set(contador, false);
-                        }
-                        contador += 1;
-                    }
-                }
         }
-
 
         for (int j = 0; j < binari.get((char) 258).length(); j++) {
             if (binari.get((char) 258).charAt(j) == '1') {
-                bits += "1";
+
                 bitSet.set(contador);
             } else {
-                bits += "0";
+
                 bitSet.set(contador, false);
             }
             contador += 1;
@@ -181,12 +150,15 @@ public class Compressor {
             for (int i = 0; i < multiplicacao; i++) {
                 bitSet.set(contador);
                 contador += 1;
-                bits += "1";
+
             }
             b.write(bitSet.toByteArray());
             b.close();
             arq.close();
         }
+
+        tamanhoCodificado = (bits.length()) / 8;
+        System.out.println(100.0 - (((float) (tamanhoCodificado + tamanhoTabela) * 100) / tamanhoAntigo )+ "% compactação");
     }
 
 }

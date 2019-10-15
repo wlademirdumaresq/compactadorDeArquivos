@@ -82,49 +82,4 @@ public class Node {
     }
 
 
-//    @Override
-//    public String toString() {
-//        return "[" + this.getValue().getQuantitie() + " " + this.getBit() + "]";
-//
-//    }
-//
-//
-//    public String printTree(int level) {
-//        String str = "";
-//        if(this.value.getCharacter()!= null){
-//            str =(char) Integer.parseInt(Integer.toString(this.getValue().getCharacter()))+ toString() + "\n";
-//        }else {
-//             str = toString() + "\n";
-//        }
-//
-//        for (int i = 0; i <= level * 3; i++) {
-//            str += "\t";
-//        }
-//        if (this.getRight() != null) {
-//
-//            str += "o-DIR: " + this.right.printTree(level + 1);
-//        } else {
-//
-//            str += "o-DIR: NULL";
-//        }
-//        str += "\n";
-//
-//
-//        for (int i = 0; i <= level * 3; i++) {
-//            str += "\t";
-//        }
-//        if (this.getLeft() != null) {
-//
-//            str += "o-ESQ: " + this.left.printTree(level + 1);
-//        } else {
-//
-//            str += "o-ESQ: NULL";
-//        }
-//        str += "\n";
-//
-//        return str;
-//
-//    }
-
-
 }
