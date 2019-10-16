@@ -18,6 +18,17 @@ public class Extractor {
         descodificandoTexto();
     }
 
+    public Extractor(String mapa) throws IOException {
+        this.mensagem = null;
+        this.mapa = mapa;
+        this.traducao = null;
+        recuperandoTabela();
+    }
+
+    public Map<Character, String> getCodigo() {
+        return codigo;
+    }
+
     public void recuperandoTabela() throws IOException {
         FileInputStream dicionario = new FileInputStream(mapa);
         BufferedInputStream leitor = new BufferedInputStream(dicionario);

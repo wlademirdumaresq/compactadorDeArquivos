@@ -29,10 +29,36 @@ public class Compressor {
         criandoTabela();
         codificandoTexto();
     }
+    public Compressor(String texto) throws IOException {
+        this.texto = texto;
+        this.mensagem = null;
+        this.dicionario = null;
+        criarDicionario();
+        criandoArvore();
+    }
+    public Compressor(String texto, String dicionario) throws IOException {
+        this.texto = texto;
+        this.mensagem = null;
+        this.dicionario = dicionario;
+        criarDicionario();
+        criandoArvore();
+        criandoTabela();
 
+    }
 
+    public Map<Character, String> getBinari() {
+        return binari;
+    }
 
-    public void criarDicionario() {
+    public Node getTree() {
+        return tree;
+    }
+
+    public Map<Integer, Integer> getMap() {
+        return map;
+    }
+
+    public void  criarDicionario() {
 
         try {
             FileInputStream arq = new FileInputStream(texto);
@@ -57,9 +83,10 @@ public class Compressor {
         }
 
         map.put(258, 1);
+
     }
 
-    public void criandoArvore() {
+    public void criandoArvore() throws IOException {
         for (Integer i : map.keySet()) {
             Node no = new Node(i, map.get(i));
             heap.insert(no);
