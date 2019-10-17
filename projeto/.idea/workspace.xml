@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7c751053-9430-480f-b07b-e9a79e839793" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1SLEkmbDdjn4fgN1lfzyQ6PDHpo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea/arquivosAntigos" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lteilha02\Downloads\Savio\compactadorDeArquivos-Wlademir\projeto" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lteilha02\Downloads\Savio\compactadorDeArquivos-Wlademir\projeto\.idea\arquivosAntigos" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.MainTest">
+    <configuration name="Compress1" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.edu.imd.edb.application.Main" />
+      <module name="projeto" />
+      <option name="PROGRAM_PARAMETERS" value="compress arquivosAntigos/teste1.txt arquivosBinarios/teste1.edz chaves/teste1.edt " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Compress10" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.edu.imd.edb.application.Main" />
+      <module name="projeto" />
+      <option name="PROGRAM_PARAMETERS" value="compress arquivosAntigos/teste10.txt arquivosBinarios/teste10.edz chaves/teste10.edt " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Compress2" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.edu.imd.edb.application.Main" />
+      <module name="projeto" />
+      <option name="PROGRAM_PARAMETERS" value="compress arquivosAntigos/teste2.txt arquivosBinarios/teste2.edz chaves/teste2.edt java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Compress3" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.edu.imd.edb.application.Main" />
+      <module name="projeto" />
+      <option name="PROGRAM_PARAMETERS" value="compress arquivosAntigos/teste3.txt arquivosBinarios/teste3.edz chaves/teste3.edt " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Compress4" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.edu.imd.edb.application.Main" />
+      <module name="projeto" />
+      <option name="PROGRAM_PARAMETERS" value="compress arquivosAntigos/teste4.txt arquivosBinarios/teste4.edz chaves/teste4.edt " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Compress5" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.edu.imd.edb.application.Main" />
+      <module name="projeto" />
+      <option name="PROGRAM_PARAMETERS" value="compress arquivosAntigos/teste5.txt arquivosBinarios/teste5.edz chaves/teste5.edt " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Compress6" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.edu.imd.edb.application.Main" />
+      <module name="projeto" />
+      <option name="PROGRAM_PARAMETERS" value="compress arquivosAntigos/teste6.txt arquivosBinarios/teste6.edz chaves/teste6.edt " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Compress7" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.edu.imd.edb.application.Main" />
+      <module name="projeto" />
+      <option name="PROGRAM_PARAMETERS" value="compress arquivosAntigos/teste7.txt arquivosBinarios/teste7.edz chaves/teste7.edt " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Compress8" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.edu.imd.edb.application.Main" />
+      <module name="projeto" />
+      <option name="PROGRAM_PARAMETERS" value="compress arquivosAntigos/teste8.txt arquivosBinarios/teste8.edz chaves/teste8.edt " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Compress9" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.edu.imd.edb.application.Main" />
+      <module name="projeto" />
+      <option name="PROGRAM_PARAMETERS" value="compress arquivosAntigos/teste9.txt arquivosBinarios/teste9.edz chaves/teste9.edt " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Extract1" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.edu.imd.edb.application.Main" />
+      <module name="projeto" />
+      <option name="PROGRAM_PARAMETERS" value="extract arquivosBinarios/teste1.edz chaves/teste1.edt arquivosNovos/teste1.txt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Extract10" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.edu.imd.edb.application.Main" />
+      <module name="projeto" />
+      <option name="PROGRAM_PARAMETERS" value="extract arquivosBinarios/teste10.edz chaves/teste10.edt arquivosNovos/teste10.txt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Extract2" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.edu.imd.edb.application.Main" />
+      <module name="projeto" />
+      <option name="PROGRAM_PARAMETERS" value="extract arquivosBinarios/teste2.edz chaves/teste2.edt arquivosNovos/teste2.txt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Extract3" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.edu.imd.edb.application.Main" />
+      <module name="projeto" />
+      <option name="PROGRAM_PARAMETERS" value="extract arquivosBinarios/teste3.edz chaves/teste3.edt arquivosNovos/teste3.txt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Extract4" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.edu.imd.edb.application.Main" />
+      <module name="projeto" />
+      <option name="PROGRAM_PARAMETERS" value="extract arquivosBinarios/teste4.edz chaves/teste4.edt arquivosNovos/teste4.txt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Extract5" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.edu.imd.edb.application.Main" />
+      <module name="projeto" />
+      <option name="PROGRAM_PARAMETERS" value="extract arquivosBinarios/teste5.edz chaves/teste5.edt arquivosNovos/teste5.txt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Extract6" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.edu.imd.edb.application.Main" />
+      <module name="projeto" />
+      <option name="PROGRAM_PARAMETERS" value="extract arquivosBinarios/teste6.edz chaves/teste6.edt arquivosNovos/teste6.txt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Extract7" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.edu.imd.edb.application.Main" />
+      <module name="projeto" />
+      <option name="PROGRAM_PARAMETERS" value="extract arquivosBinarios/teste7.edz chaves/teste7.edt arquivosNovos/teste7.txt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Extract8" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.edu.imd.edb.application.Main" />
+      <module name="projeto" />
+      <option name="PROGRAM_PARAMETERS" value="extract arquivosBinarios/teste8.edz chaves/teste8.edt arquivosNovos/teste8.txt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Extract9" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="br.edu.imd.edb.application.Main" />
+      <module name="projeto" />
+      <option name="PROGRAM_PARAMETERS" value="extract arquivosBinarios/teste9.edz chaves/teste9.edt arquivosNovos/teste9.txt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="projeto" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.edu.imd.edb.application.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.edu.imd.edb.application.test" />
+      <option name="MAIN_CLASS_NAME" value="br.edu.imd.edb.application.test.MainTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Compress1" />
+      <item itemvalue="Application.Compress2" />
+      <item itemvalue="Application.Compress3" />
+      <item itemvalue="Application.Compress4" />
+      <item itemvalue="Application.Compress5" />
+      <item itemvalue="Application.Compress6" />
+      <item itemvalue="Application.Compress7" />
+      <item itemvalue="Application.Compress8" />
+      <item itemvalue="Application.Compress9" />
+      <item itemvalue="Application.Compress10" />
+      <item itemvalue="Application.Extract1" />
+      <item itemvalue="Application.Extract2" />
+      <item itemvalue="Application.Extract3" />
+      <item itemvalue="Application.Extract4" />
+      <item itemvalue="Application.Extract5" />
+      <item itemvalue="Application.Extract6" />
+      <item itemvalue="Application.Extract7" />
+      <item itemvalue="Application.Extract8" />
+      <item itemvalue="Application.Extract9" />
+      <item itemvalue="Application.Extract10" />
+      <item itemvalue="JUnit.MainTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MainTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7c751053-9430-480f-b07b-e9a79e839793" name="Default Changelist" comment="" />
+      <created>1571334628465</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1571334628465</updated>
+    </task>
+    <servers />
+  </component>
+</project>
