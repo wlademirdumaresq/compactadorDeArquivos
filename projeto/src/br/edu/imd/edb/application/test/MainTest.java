@@ -42,7 +42,6 @@ public class MainTest {
         File aux = new File("maintTest1.txt");
         aux.delete();
 
-
     }
 
     @Test
@@ -104,8 +103,6 @@ public class MainTest {
             //Assert
             assertEquals(mapTeste, compressor3.getBinari());
 
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -116,7 +113,6 @@ public class MainTest {
         aux2.delete();
 
     }
-
 
     @Test
     public void gerarArquivoCodificado() {
@@ -164,37 +160,6 @@ public class MainTest {
         aux3.delete();
 
     }
-//    @Test
-//    public void gerarArquivoChave() {
-//
-//        try {
-//            //Arrange
-//            FileWriter teste = new FileWriter("maintTest5.txt");
-//            teste.write("lollapalooza");
-//            teste.close();
-//
-//            Compressor compressor5 = new Compressor("maintTest5.txt", "mainText5Chave.txt");
-//
-//
-//            //Act
-//            String str2=("l" + (char) -1 + "11" + (char) -1 + "o" + (char) -1 + "10" + (char) -1 + "z" + (char) -1 + "0111" + (char) -1 + "p" + (char) -1 + "0110" + (char) -1 + "Ă" + (char) -1 + "010" + (char) -1 + "a" + (char) -1 + "00" + (char) -1);
-//            FileInputStream teste5 = new FileInputStream("mainText5Chave.txt");
-//            String str1 = new String(teste5.readAllBytes(),"UTF8");
-//            //Assert
-//
-//            assertEquals(str1, str2);
-//
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        File aux = new File("maintTest5.txt");
-//        File aux2 = new File("mainText5Chave.txt");
-//
-//        aux.delete();
-//        aux2.delete();
-//
-//    }
 
     @Test
     public void recuperarArquivoChave() {
@@ -228,19 +193,10 @@ public class MainTest {
 
     }
 
-    @Test
-    public void recuperarArquivoCodificado() {
-
-
-    }
-
-
     public boolean assertByteEquals(byte obj[], byte[] obj1) throws UnsupportedEncodingException {
         String aux = new String(obj, "UTF8");
         String aux1 = new String(obj1, "UTF8");
 
         return aux.equals(aux1);
-
-
     }
 }

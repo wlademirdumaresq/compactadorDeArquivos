@@ -1,8 +1,7 @@
 package br.edu.imd.edb.application;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Extractor {
     private Map<String, Character> letra = new HashMap<>();
@@ -62,14 +61,12 @@ public class Extractor {
             if (codigo.containsValue(comparador)) {
                 if (comparador.equals(codigo.get((char) 258))) {
 
-                        novo.close();
-
+                    novo.close();
 
                 } else {
                     novo.write(letra.get(comparador));
                     comparador = "";
                 }
-
 
             }
         }
