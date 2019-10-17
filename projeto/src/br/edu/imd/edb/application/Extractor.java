@@ -3,7 +3,6 @@ package br.edu.imd.edb.application;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 public class Extractor {
     private Map<String, Character> letra = new HashMap<>();

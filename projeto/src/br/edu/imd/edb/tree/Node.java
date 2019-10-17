@@ -104,12 +104,7 @@ public class Node {
         return false;
     }
 
-//    @Override
-////    public int hashCode() {
-////        return Objects.hash(value.getQuantitie());
-////    }
-    //
-//
+
     public String toString(){
         return "["+this.value.getQuantitie()+"]";
     }

@@ -86,7 +86,7 @@ public class Compressor {
 
     }
 
-    public void criandoArvore() throws IOException {
+    public void criandoArvore()  {
         for (Integer i : map.keySet()) {
             Node no = new Node(i, map.get(i));
             heap.insert(no);
